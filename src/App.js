@@ -25,9 +25,16 @@ const App = () => {
     }
   ];
 
+  const addExpenseHandler = (expenseData) =>{
+    console.log('In App.js');
+    console.log(expenseData);
+    expenses.push(expenseData);
+    console.log(expenses);
+  };
+
   return (
     <div>
-      <NewExpense/>
+      <NewExpense onAddExpense={addExpenseHandler}/>
       <Expenses items = {expenses}/>
     </div>
   );
